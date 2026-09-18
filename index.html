@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Compras</title>
+</head>
+<body>
+    <h1>Lista de Compras</h1>
+
+    <input type="text" id="produto" placeholder="Digite um produto">
+    <button onclick="adicionarProduto()">Adicionar</button>
+
+    <ul id="lista"></ul>
+
+    <script>
+        function adicionarProduto() {
+            const campo = document.getElementById("produto");
+            const produto = campo.value.trim();
+
+            if (produto !== "") {
+                const item = document.createElement("li");
+                item.textContent = produto;
+
+                document.getElementById("lista").appendChild(item);
+
+                campo.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
